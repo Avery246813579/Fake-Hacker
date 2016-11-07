@@ -1,0 +1,9 @@
+var mainframe;
+
+function parseInternetProtocolAddress(){
+
+}
+
+function byPassMainFrame(ip){
+
+}
