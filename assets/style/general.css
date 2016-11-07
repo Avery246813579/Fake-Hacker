@@ -5,3 +5,26 @@ body{
 #code{
     color: green;
 }
+
+#options{
+    left: 25px;
+    bottom: 25px;
+    position: fixed;
+
+    float: left;
+}
+
+#options .code{
+    background-color: green;
+    color: black;
+    padding: 2px;
+
+    float: left;
+}
+
+#options .info{
+    color: green;
+    padding: 2px;
+    float: left;
+    padding-left: 8px;
+}
