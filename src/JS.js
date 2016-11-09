@@ -2,7 +2,7 @@ var text = "asdpokaspokpasdko<br>dfsaijasiodfjioajsdf<br>asdfokasdfkaosdfkoasdfk
 var code = document.getElementById('code');
 var i = 0;
 
-var INPUT_INCREMENT = 2;
+var INPUT_INCREMENT = 10;
 
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
@@ -37,7 +37,7 @@ window.onkeydown = function (event) {
         i += INPUT_INCREMENT;
     }
 
-    code.innerHTML = text.substr(0, i).replace(/·/g, '<br>');
+    code.innerHTML = text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 };
 
 var global;
@@ -50,11 +50,11 @@ function draw() {
         ticks = 0;
     }
 
-    console.dir(text.substr(0, i).replace(/·/g, '<br>'));
+    console.dir(text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'));
     if (on) {
-        code.innerHTML = text.substr(0, i).replace(/·/g, '<br>') + "|";
+        code.innerHTML = text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;') + "|";
     }else{
-        code.innerHTML = text.substr(0, i).replace(/·/g, '<br>');
+        code.innerHTML = text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
     }
 
     global = requestAnimationFrame(draw);
