@@ -3,7 +3,9 @@ body{
 }
 
 #code{
-    color: green;
+    font-family: "Monospaced";
+    font-size: 18px;
+    color:#00FF00;
 }
 
 #options{
@@ -15,7 +17,7 @@ body{
 }
 
 #options .code{
-    background-color: green;
+    background-color: #00FF00;
     color: black;
     padding: 2px;
 
@@ -23,7 +25,7 @@ body{
 }
 
 #options .info{
-    color: green;
+    color: #00FF00;
     padding: 2px;
     float: left;
     padding-left: 8px;

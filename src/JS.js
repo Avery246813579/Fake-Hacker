@@ -2,6 +2,8 @@ var text = "asdpokaspokpasdko<br>dfsaijasiodfjioajsdf<br>asdfokasdfkaosdfkoasdfk
 var code = document.getElementById('code');
 var i = 0;
 
+var INPUT_INCREMENT = 2;
+
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
@@ -24,9 +26,18 @@ readTextFile('assets/hacks/raw/Javascript.txt', function(err, code){
     text = code;
 });
 
-window.onkeypress = function (event) {
-    i++;
-    code.innerHTML = text.substr(0, i);
+window.onkeydown = function (event) {
+    if(event['code'] == "Backspace"){
+        i -= INPUT_INCREMENT;
+
+        if(i < 1){
+            i = 0;
+        }
+    }else {
+        i += INPUT_INCREMENT;
+    }
+
+    code.innerHTML = text.substr(0, i).replace(/·/g, '<br>');
 };
 
 var global;
@@ -39,11 +50,11 @@ function draw() {
         ticks = 0;
     }
 
-    console.dir(on);
+    console.dir(text.substr(0, i).replace(/·/g, '<br>'));
     if (on) {
-        code.innerHTML = text.substr(0, i) + "|";
+        code.innerHTML = text.substr(0, i).replace(/·/g, '<br>') + "|";
     }else{
-        code.innerHTML = text.substr(0, i);
+        code.innerHTML = text.substr(0, i).replace(/·/g, '<br>');
     }
 
     global = requestAnimationFrame(draw);
