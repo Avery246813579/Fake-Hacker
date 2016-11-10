@@ -38,6 +38,9 @@ window.onkeydown = function (event) {
     }
 
     code.innerHTML = text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+    code.scrollTop = code.scrollHeight;
+
+    console.dir(code.scrollTop + "=" + code.scrollHeight);
 };
 
 var global;
@@ -50,7 +53,6 @@ function draw() {
         ticks = 0;
     }
 
-    console.dir(text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'));
     if (on) {
         code.innerHTML = text.substr(0, i).replace(/·/g, '<br>').replace(/ø/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;') + "|";
     }else{
